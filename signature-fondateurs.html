@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signature Fondateurs — Candice Obadia</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+  :root {
+    --brun: #42272B;
+    --violet: #5e17eb;
+    --creme: #ebded4;
+    --blanc: #ffffff;
+    --brun-clair: #7a4f54;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--brun); color: var(--creme); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+  h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+
+  /* NAV */
+  nav { padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(235,222,212,0.08); }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 20px; color: var(--creme); text-decoration: none; }
+  .nav-logo span { color: var(--violet); }
+  .nav-back { font-size: 13px; color: rgba(235,222,212,0.4); text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: var(--creme); }
+
+  /* HERO */
+  .hero { padding: 80px 48px 60px; text-align: center; position: relative; overflow: hidden; }
+  .hero-deco { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: var(--violet); opacity: 0.04; animation: pulse 7s ease-in-out infinite; }
+  .hero-badge { display: inline-block; background: var(--violet); color: var(--blanc); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 18px; border-radius: 100px; margin-bottom: 28px; opacity: 0; animation: fadeUp 0.6s 0.1s forwards; }
+  .hero-sub-txt { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(235,222,212,0.35); margin-bottom: 12px; opacity: 0; animation: fadeUp 0.6s 0.2s forwards; }
+  .hero h1 { font-size: clamp(48px, 7vw, 100px); line-height: 1; color: var(--blanc); margin-bottom: 12px; opacity: 0; animation: fadeUp 0.6s 0.3s forwards; }
+  .hero h1 em { font-style: italic; color: var(--violet); }
+  .hero-desc { font-size: 18px; color: rgba(235,222,212,0.6); max-width: 520px; margin: 0 auto 48px; line-height: 1.7; opacity: 0; animation: fadeUp 0.6s 0.5s forwards; }
+  .hero-scroll { font-size: 13px; color: rgba(235,222,212,0.25); opacity: 0; animation: fadeUp 0.6s 0.7s forwards; }
+
+  /* CE QUE C'EST */
+  .section-quoi { padding: 80px 48px; background: var(--brun); }
+  .section-quoi .inner { max-width: 900px; margin: 0 auto; }
+  .section-quoi h2 { font-size: clamp(26px,3.5vw,42px); color: var(--creme); text-align: center; margin-bottom: 48px; line-height: 1.2; }
+  .piliers { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+  .pilier { background: rgba(235,222,212,0.04); border: 1px solid rgba(235,222,212,0.08); border-radius: 18px; padding: 28px 24px; transition: border-color 0.2s; }
+  .pilier:hover { border-color: rgba(94,23,235,0.4); }
+  .pilier-icon { font-size: 32px; margin-bottom: 14px; }
+  .pilier h3 { font-size: 20px; color: var(--creme); margin-bottom: 8px; }
+  .pilier p { font-size: 14px; color: rgba(235,222,212,0.55); line-height: 1.7; }
+
+  /* POURQUOI */
+  .section-pourquoi { padding: 80px 48px; background: rgba(94,23,235,0.08); border-top: 1px solid rgba(94,23,235,0.15); border-bottom: 1px solid rgba(94,23,235,0.15); }
+  .section-pourquoi .inner { max-width: 720px; margin: 0 auto; text-align: center; }
+  .section-pourquoi h2 { font-size: clamp(24px,3vw,38px); color: var(--creme); margin-bottom: 20px; line-height: 1.2; }
+  .section-pourquoi p { font-size: 16px; color: rgba(235,222,212,0.6); line-height: 1.75; margin-bottom: 16px; }
+  .section-pourquoi p strong { color: var(--creme); font-weight: 500; }
+
+  /* PRIX */
+  .section-prix { padding: 80px 48px; background: var(--brun); }
+  .prix-inner { max-width: 560px; margin: 0 auto; }
+  .prix-card { background: rgba(94,23,235,0.12); border: 1px solid rgba(94,23,235,0.25); border-radius: 24px; padding: 44px 40px; text-align: center; }
+  .prix-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(235,222,212,0.35); margin-bottom: 20px; }
+  .prix-barre { font-family: 'DM Serif Display', serif; font-size: 28px; color: rgba(235,222,212,0.25); text-decoration: line-through; margin-bottom: 4px; }
+  .prix-reel { font-family: 'DM Serif Display', serif; font-size: 80px; color: var(--blanc); line-height: 1; }
+  .prix-mois { font-size: 18px; color: rgba(235,222,212,0.5); margin-bottom: 8px; }
+  .prix-garantie { font-size: 13px; color: rgba(235,222,212,0.4); margin-bottom: 24px; font-style: italic; }
+  .prix-economie { display: inline-block; background: rgba(94,23,235,0.25); border: 1px solid rgba(94,23,235,0.35); border-radius: 10px; padding: 10px 20px; font-size: 14px; color: rgba(235,222,212,0.8); margin-bottom: 32px; }
+  .prix-economie strong { color: var(--blanc); font-weight: 500; }
+
+  /* PLACES */
+  .places-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px; }
+  .place-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--violet); }
+  .places-txt { font-size: 13px; color: rgba(235,222,212,0.45); text-align: center; margin-bottom: 32px; font-style: italic; }
+
+  /* COUNTDOWN */
+  .countdown { display: flex; gap: 12px; justify-content: center; margin-bottom: 36px; }
+  .cd-block { background: rgba(235,222,212,0.05); border: 1px solid rgba(235,222,212,0.1); border-radius: 12px; padding: 14px 18px; text-align: center; min-width: 72px; }
+  .cd-num { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--blanc); line-height: 1; }
+  .cd-label { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(235,222,212,0.35); margin-top: 4px; }
+
+  /* FORM */
+  .form-wrap { max-width: 560px; margin: 0 auto; }
+  .form-titre { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--creme); text-align: center; margin-bottom: 8px; }
+  .form-sous { font-size: 14px; color: rgba(235,222,212,0.45); text-align: center; margin-bottom: 28px; }
+  .form-group { display: flex; flex-direction: column; gap: 12px; }
+  .form-input { background: rgba(235,222,212,0.06); border: 1px solid rgba(235,222,212,0.12); border-radius: 12px; padding: 14px 18px; color: var(--creme); font-family: 'DM Sans', sans-serif; font-size: 15px; outline: none; transition: border-color 0.2s; width: 100%; }
+  .form-input::placeholder { color: rgba(235,222,212,0.25); }
+  .form-input:focus { border-color: var(--violet); }
+  .form-btn { background: var(--violet); color: var(--blanc); border: none; padding: 16px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.2s; width: 100%; }
+  .form-btn:hover { background: #4a12bc; transform: translateY(-2px); }
+  .form-success { display: none; background: rgba(94,23,235,0.2); border: 1px solid rgba(94,23,235,0.35); border-radius: 14px; padding: 24px; text-align: center; color: var(--creme); font-size: 15px; line-height: 1.7; }
+  .form-note { font-size: 12px; color: rgba(235,222,212,0.25); text-align: center; margin-top: 14px; }
+
+  footer { padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(235,222,212,0.06); }
+  footer p { font-size: 11px; color: rgba(235,222,212,0.2); }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes pulse { 0%,100%{transform:translate(-50%,-50%) scale(1)} 50%{transform:translate(-50%,-50%) scale(1.06)} }
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s, transform 0.6s; }
+  .reveal.on { opacity:1; transform:translateY(0); }
+
+  @media(max-width:768px){
+    nav, .hero, .section-quoi, .section-pourquoi, .section-prix { padding-left:20px; padding-right:20px; }
+    .piliers { grid-template-columns: 1fr; }
+    footer { flex-direction:column; gap:10px; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Candice <span>Obadia</span></a>
+  <a href="index.html" class="nav-back">← Retour à la page principale</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-deco"></div>
+  <span class="hero-badge">Lancement mai 2026</span>
+  <p class="hero-sub-txt">Je recherche</p>
+  <h1><em>6 restaurateurs</em></h1>
+  <p class="hero-desc">Pour le premier groupe Signature Fondateurs — l'accompagnement groupal pour structurer, piloter et enfin faire ce que vous voulez vraiment.</p>
+  <p class="hero-scroll">↓ Découvrez ce qui est inclus</p>
+</section>
+
+<!-- CE QUE C'EST -->
+<section class="section-quoi">
+  <div class="inner">
+    <h2 class="reveal">Ce que vous obtenez<br>en rejoignant le groupe.</h2>
+    <div class="piliers">
+      <div class="pilier reveal">
+        <div class="pilier-icon">📱</div>
+        <h3>Le Cockpit Resto</h3>
+        <p>Votre tableau de bord construit sur mesure. Chaque matin, en 5 minutes, vous savez exactement où en est votre restaurant. Vos chiffres, vos alertes, vos priorités, tout au même endroit.</p>
+      </div>
+      <div class="pilier reveal">
+        <div class="pilier-icon">👥</div>
+        <h3>La communauté privée</h3>
+        <p>Un groupe fermé de restaurateurs indépendants sélectionnés. Vous n'êtes plus seul à porter vos questions. Entraide, partage d'expériences, retours concrets entre pairs.</p>
+      </div>
+      <div class="pilier reveal">
+        <div class="pilier-icon">🎓</div>
+        <h3>Masterclass chaque mois</h3>
+        <p>Chaque mois, un expert vous offre une masterclass. Financement, Google Business, RH, communication, fiscalité. Des sujets qui changent vraiment quelque chose dans votre quotidien.</p>
+      </div>
+      <div class="pilier reveal">
+        <div class="pilier-icon">⭐</div>
+        <h3>Annuaire d'experts sélectionnés</h3>
+        <p>Des profils validés par moi — comptable spécialisé CHR, consultant RH, expert Google Business. Vous pouvez les consulter en session individuelle, à tarif préférentiel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI -->
+<section class="section-pourquoi">
+  <div class="inner">
+    <h2 class="reveal">Pourquoi un groupe ?<br>Pourquoi maintenant ?</h2>
+    <p class="reveal">Parce qu'un restaurant bien structuré vous laisse enfin le choix. Pour certains ce sera ouvrir un deuxième projet. Pour d'autres retrouver du temps pour leur famille. Ou simplement partir en vacances sans décrocher toutes les heures.</p>
+    <p class="reveal"><strong>C'est possible.</strong> Et c'est exactement ce sur quoi on travaille ensemble.</p>
+    <p class="reveal">Le groupe c'est aussi l'occasion de ne plus être seul. De voir que d'autres restaurateurs vivent la même chose. Et de construire ensemble, avec un cadre, un outil et une méthode qui tiennent vraiment.</p>
+  </div>
+</section>
+
+<!-- PRIX -->
+<section class="section-prix">
+  <div class="prix-inner">
+    <div class="prix-card reveal">
+      <div class="prix-label">Prix fondateur — garanti à vie</div>
+      <div class="prix-barre">490€/mois</div>
+      <div class="prix-reel">290€</div>
+      <div class="prix-mois">par mois</div>
+      <div class="prix-garantie">Prix garanti à vie tant que vous restez dans le groupe</div>
+      <div class="prix-economie">Vous économisez <strong>200€/mois</strong>, soit <strong>1 200€ sur 6 mois</strong></div>
+      <div class="places-row">
+        <div class="place-dot"></div><div class="place-dot"></div><div class="place-dot"></div>
+        <div class="place-dot"></div><div class="place-dot"></div><div class="place-dot"></div>
+      </div>
+      <p class="places-txt">6 places disponibles. Pas une de plus.</p>
+      <div class="countdown">
+        <div class="cd-block"><div class="cd-num" id="cd-j">00</div><div class="cd-label">Jours</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-h">00</div><div class="cd-label">Heures</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-m">00</div><div class="cd-label">Min</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-s">00</div><div class="cd-label">Sec</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE -->
+<section style="padding: 80px 48px; background: var(--brun);">
+  <div class="form-wrap">
+    <h2 class="form-titre reveal">Je réserve ma place.</h2>
+    <p class="form-sous reveal">Je vous contacte personnellement avant le lancement de mai.</p>
+    <form id="sigForm" class="form-group reveal">
+      <input type="text" id="sig-prenom" class="form-input" placeholder="Votre prénom" required />
+      <input type="email" id="sig-email" class="form-input" placeholder="votre@email.com" required />
+      <input type="text" id="sig-restaurant" class="form-input" placeholder="Votre restaurant (facultatif)" />
+      <button type="submit" class="form-btn" id="sigBtn">Je réserve ma place →</button>
+    </form>
+    <div class="form-success" id="sigSuccess">
+      C'est noté ! Je vous contacte en avant-première avant le lancement de mai. À très vite.
+    </div>
+    <p class="form-note reveal">Aucun engagement. Je vous contacte pour vous présenter le programme avant de démarrer.</p>
+  </div>
+</section>
+
+<footer>
+  <p style="font-family:'DM Serif Display',serif; font-style:italic; font-size:15px; color:rgba(235,222,212,0.3);">Candice <span style="color:rgba(94,23,235,0.4);">Obadia</span></p>
+  <p>© 2026 — Toujours présente. Jamais à votre place.</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{ if(e.isIntersecting) setTimeout(()=>e.target.classList.add('on'),i*60); });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function updateCountdown(){
+  const target = new Date('2026-05-01T00:00:00');
+  const now = new Date();
+  const diff = target - now;
+  if(diff <= 0) return;
+  const j = Math.floor(diff/86400000);
+  const h = Math.floor((diff%86400000)/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  document.getElementById('cd-j').textContent = String(j).padStart(2,'0');
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+document.getElementById('sigForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = document.getElementById('sigBtn');
+  const prenom = document.getElementById('sig-prenom').value;
+  const email = document.getElementById('sig-email').value;
+  const restaurant = document.getElementById('sig-restaurant').value;
+  btn.textContent = '...';
+  btn.style.opacity = '0.7';
+  try {
+    const formData = new FormData();
+    formData.append('prenom', prenom);
+    formData.append('email', email);
+    formData.append('restaurant', restaurant);
+    formData.append('_subject', '🔥 Nouvelle inscription Signature Fondateurs');
+    formData.append('message', prenom + ' (' + email + ') — ' + restaurant + ' — veut rejoindre les Signature Fondateurs');
+    const res = await fetch('https://formspree.io/f/xwpkqdqv', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
+    if(res.ok){
+      document.getElementById('sigForm').style.display = 'none';
+      document.getElementById('sigSuccess').style.display = 'block';
+    } else {
+      window.location.href = 'mailto:candiceo.strategie@gmail.com?subject=Inscription Signature Fondateurs&body=Prénom : ' + encodeURIComponent(prenom) + '%0AEmail : ' + encodeURIComponent(email) + '%0ARestaurant : ' + encodeURIComponent(restaurant);
+    }
+  } catch(err){
+    window.location.href = 'mailto:candiceo.strategie@gmail.com?subject=Inscription Signature Fondateurs&body=Prénom : ' + encodeURIComponent(prenom) + '%0AEmail : ' + encodeURIComponent(email);
+  }
+});
+</script>
+</body>
+</html>
